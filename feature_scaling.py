@@ -315,47 +315,6 @@ if __name__ == '__main__':
         if verbose:
             y_train_series.info(verbose=verbose)
 
-        """
-        cols_dtype_float = ['sme1.dd00vth_sgddown_delta_u3s', 'sme1.dd00vth_sgddown_post_u3s', 'sme1.dd00vth_sgddown_pre_u3s',
-                            'sme1.dd01vth_sgddown_delta_u3s', 'sme1.dd01vth_sgddown_pre_u3s', 'sme1.prg_12p_vth_b0w0_inn_l2s',
-                            'sme1.prg_12p_vth_b0w0_out_u2s', 'sme1.prg_12p_vth_b0w1_inn_l2s', 'sme1.prg_12p_vth_b0w1_out_u2s',
-                            'sme1.prg_12p_vth_b1w0_inn_med', 'sme1.prg_12p_vth_b1w0_out_med', 'sme1.prg_12p_vth_b1w1_inn_l2s',
-                            'sme1.prg_12p_vth_b1w1_out_u2s', 'sme1.sblk1_pre_12pvt_out_wl95_u2s', 'sme1.sblk1_pst_12pvt_inn_wl00_l2s',
-                            'sme1.sblk1_pst_12pvt_inn_wl00_u2s', 'sme1.sblk1_pst_12pvt_inn_wl26_l2s', 'sme1.sblk1_pst_12pvt_inn_wl26_u2s',
-                            'sme1.sblk1_pst_12pvt_inn_wl95_l2s', 'sme1.sblk1_pst_12pvt_inn_wl95_u2s', 'sme1.sblk1_pst_12pvt_out_wl00_l2s',
-                            'sme1.sblk1_pst_12pvt_out_wl00_u2s', 'sme1.sblk1_pst_12pvt_out_wl26_l2s', 'sme1.sblk1_pst_12pvt_out_wl26_u2s',
-                            'sme1.sblk1_pst_12pvt_out_wl95_l2s', 'sme1.sblk1_pst_12pvt_out_wl95_u2s', 'sme1.sblk1_wlrc_val_w1_p0',
-                            'sme1.sblk1_wlrc_val_w1_p1', 'sme1.sblk1_wlrc_val_w2_p0', 'sme1.sblk1_wlrc_val_w2_p1', 'sme1.sblk1_wlrc_val_w3_p0',
-                            'sme1.sblk1_wlrc_val_w3_p1', 'sme1.sblk1_wlrc_val_w4_p1', 'sme1.sblk2_pre_12pvt_out_wl95_u2s',
-                            'sme1.sblk2_pst_12pvt_inn_wl00_l2s', 'sme1.sblk2_pst_12pvt_inn_wl00_u2s', 'sme1.sblk2_pst_12pvt_inn_wl26_l2s',
-                            'sme1.sblk2_pst_12pvt_inn_wl26_u2s', 'sme1.sblk2_pst_12pvt_inn_wl95_l2s', 'sme1.sblk2_pst_12pvt_inn_wl95_u2s',
-                            'sme1.sblk2_pst_12pvt_out_wl00_l2s', 'sme1.sblk2_pst_12pvt_out_wl00_u2s', 'sme1.sblk2_pst_12pvt_out_wl26_l2s',
-                            'sme1.sblk2_pst_12pvt_out_wl26_u2s',	'sme1.sblk2_pst_12pvt_out_wl95_l2s', 'sme1.sblk2_pst_12pvt_out_wl95_u2s',
-                            'sme1.sblk2_wlrc_val_w1_p0', 'sme1.sblk2_wlrc_val_w1_p1', 'sme1.sblk2_wlrc_val_w2_p0', 'sme1.sblk2_wlrc_val_w2_p1',
-                            'sme1.sblk2_wlrc_val_w3_p0', 'sme1.sblk2_wlrc_val_w3_p1', 'sme1.sblk2_wlrc_val_w4_p0', 'sme1.sblk2_wlrc_val_w4_p1',
-                            'sme1.sgd0vth_sgddown_delta_l3s', 'sme1.sgd0vth_sgddown_post_l3s', 'sme1.sgd0vth_sgddown_pre_l3s',
-                            'sme1.sgd1vth_sgddown_delta_l3s', 'sme1.sgdprog_erase_pass', 'sme1.sgdprog_prog_pass', 'sme1.trim_prgloop_tr0_wl00',
-                            'sme1.trim_prgloop_tr0_wl47', 'sme1.trim_prgloop_tr0_wl48', 'sme1.trim_prgloop_tr0_wl68', 'sme1.trim_prgloop_tr0_wl95',
-                            'sme1.vera_mlc_erloop_tr0', 'sme1.vera_mlc_erloop_tr1', 'sme1.vera_mlc_loop_delta', 'sme1.vera_mlc_rate',
-                            'sme1.vera_slc_erloop_tr0', 'sme1.vera_slc_erloop_tr1', 'sme1.vera_slc_loop_delta', 'sme1.vera_slc_rate',
-                            'sme1.vpgmslc_erase_rate', 'sme1.vpgmu_loop_delta', 'sme1.vpgmu_prog_rate', 'sme1.vth_from0_u3s',
-                            'sme1.vth_from0_win', 'sme1.vth_from1_u3s', 'sme1.vth_from1_win', 'sme1.vth_sgd_afsgdmpw_l3s',
-                            'sme1.vth_sgd_afsgdmpw_u3s', 'sme1.vth_sgd_afsgdmpw_win', 'sme1.vth_sgd_afsgdpr_u3s', 'sme1.vth_sgd_afsgdpr_win',
-                            'sme1.vth_sgd_l3s', 'sme1.vth_sgd_med', 'sme1.vth_sgd_u3s', 'sme1.vth_sgd_win', 'sme1.vth_sgs_afsgspr_l3s',
-                            'sme1.vth_sgs_afsgspr_win', 'sme1.vth_sgs_l3s', 'sme1.vth_sgs_med', 'sme1.vth_sgs_u3s', 'sme1.vth_sgs_win',
-                            'sme1.vth_sgsb_l3s', 'sme1.vth_sgsb_med', 'sme1.vth_sgsb_u3s', 'sme1.vth_sgsb_win', 'sme1.vth_wl72_l3s',
-                            'sme1.vth_wl72_med', 'sme1.vth_wl72_u3s', 'sme1.vth_wl72_win', 'sme1.vth_wldd0_aftprognvt_l3s',
-                            'sme1.vth_wldd0_l3s', 'sme1.vth_wldd0_med', 'sme1.vth_wldd0_u3s', 'sme1.vth_wldd0_win',
-                            'sme1.vth_wldd1_aftprognvt_l3s', 'sme1.vth_wldd1_aftprognvt_win', 'sme1.vth_wldd1_l3s', 'sme1.vth_wldd1_med',
-                            'sme1.vth_wldd1_u3s', 'sme1.vth_wldd1_win', 'sme1.vth_wldl_aftprognvt_l3s', 'sme1.vth_wldl_aftprognvt_win',
-                            'sme1.vth_wldl_l3s', 'sme1.vth_wldl_med', 'sme1.vth_wldl_u3s', 'sme1.vth_wldl_win', 'sme1.vth_wlds0_aftprognvt_l3s',
-                            'sme1.vth_wlds0_aftprognvt_med', 'sme1.vth_wlds0_aftprognvt_u3s', 'sme1.vth_wlds0_aftprognvt_win', 'sme1.vth_wlds0_l3s',
-                            'sme1.vth_wlds0_med', 'sme1.vth_wlds0_u3s', 'sme1.vth_wlds0_win', 'sme1.vth_wlds1_aftprognvt_l3s',
-                            'sme1.vth_wlds1_aftprognvt_win', 'sme1.vth_wlds1_l3s', 'sme1.vth_wlds1_med', 'sme1.vth_wlds1_u3s',
-                            'sme1.vth_wlds1_win', 'sme1.vth_wldu_aftprognvt_l3s', 'sme1.vth_wldu_aftprognvt_win', 'sme1.vth_wldu_l3s',
-                            'sme1.vth_wldu_med', 'sme1.vth_wldu_u3s', 'sme1.vth_wldu_win']
-        """
-
         cols_dtype_float = X_train_df.columns.to_numpy().tolist()
         data_preprocessor = DataPreprocessor(X_train_df, X_test_df, y_train_series, target_col_name, target_dtype,
                                              cols_dtype_float=cols_dtype_float, key_cols=key_cols, verbose=verbose,
